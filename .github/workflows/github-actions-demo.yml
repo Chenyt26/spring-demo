@@ -4,14 +4,13 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - name: Check out repository code
-        uses: actions/checkout@v2
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
-      - run: echo "🍏  This job's status is ${{ job.status }}."
+     - name: Huawei CLoud Software Repository for Container (SWR) Login
+       uses: huaweicloud/swr-login@v1
+       with:
+         region: 'cn-north-4' # example: ap-southeast-3
+         access-key-id: 'cn-north-4@Y5MPLMHSCYFEPFN30KP0'
+         access-key-secret: 'd559318d90f29de2499425cca3491082aacb8d3b7599a9d95b684be29ebc4ffc'
+     - run: |
+        docker images
+        docker pull swr.cn-north-4.myhuaweicloud.com/hcloudcli/springbootdemo:v1.1
+        docker images
