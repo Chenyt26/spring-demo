@@ -11,4 +11,4 @@ jobs:
          access-key-id: ${{ secrets.ACCESSKEY }}
          access-key-secret: ${{ secrets.SECRETACCESSKEY }}
      - run: |
-        echo "🍏  This job's status is ${{ DOCKER_CONFIG }}."
+        echo $DOCKER_CONFIG
