@@ -8,8 +8,8 @@ jobs:
        uses: huaweicloud/swr-login@v1
        with:
          region: 'cn-north-4' # example: ap-southeast-3
-         access-key-id: 'cn-north-4@Y5MPLMHSCYFEPFN30KP0'
-         access-key-secret: 'd559318d90f29de2499425cca3491082aacb8d3b7599a9d95b684be29ebc4ffc'
+         access-key-id: ${{ secrets.ACCESSKEY }}
+         access-key-secret: ${{ secrets.SECRETACCESSKEY }}
      - run: |
         docker images
         docker pull swr.cn-north-4.myhuaweicloud.com/hcloudcli/springbootdemo:v1.1
