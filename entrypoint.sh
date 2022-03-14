@@ -5,7 +5,7 @@ curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/b
 echo "$(<kubectl.sha256) kubectl" | sha256sum --check
 
 chmod +x kubectl
-ls -al 
 mv ./kubectl /usr/local/bin
-ls -al  /usr/local/bin
-kubectl version
+kubectl version --client=true
+
+
