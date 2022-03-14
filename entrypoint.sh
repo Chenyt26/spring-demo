@@ -6,9 +6,6 @@ echo "$(<kubectl.sha256) kubectl" | sha256sum --check
 
 chmod +x kubectl
 ls -al 
-echo $PATH
-mkdir -p ~/.local/bin/kubectl
-mv ./kubectl ~/.local/bin/kubectl
-echo $PATH
-
+mv ./kubectl /usr/local/bin
+ls -al  /usr/local/bin
 kubectl version
