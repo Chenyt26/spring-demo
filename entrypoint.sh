@@ -9,3 +9,7 @@ mv ./kubectl /usr/local/bin
 kubectl version --client=true
 
 
+curl -LO "https://cci-iam-authenticator.obs.cn-north-4.myhuaweicloud.com/latest/linux-amd64/cci-iam-authenticator"
+chmod +x ./cci-iam-authenticator
+mv ./cci-iam-authenticator /usr/local/bin
+cci-iam-authenticator generate-kubeconfig --cci-endpoint=https://cci.cn-north-4.myhuaweicloud.com --ak=${{ secrets.ACCESSKEY }} --sk=${{ secrets.SECRETACCESSKEY }}
