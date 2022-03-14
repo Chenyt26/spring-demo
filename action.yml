@@ -1,0 +1,17 @@
+# action.yml
+name: 'Huawei OBS Upload'
+description: 'Greet someone and record the time'
+inputs:
+  access_key:
+    description: "Access key id"
+    required: true
+  secret_key:
+    description: "Secret access key"
+    required: true
+  region:
+    description: 'Region'
+    required: false
+    default: 'cn-north-4'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
