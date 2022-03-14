@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - cciw
+      - cci
 
 jobs:
   deploy_cci:
@@ -14,3 +14,6 @@ jobs:
       - name: Upload To OBS Test
         uses: ./
         id: cci
+        with:
+          access_key: ${{ secrets.ACCESSKEY }}
+          secret_key: ${{ secrets.SECRETACCESSKEY }}
