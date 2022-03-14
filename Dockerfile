@@ -1,8 +1,11 @@
-FROM java:8
-COPY target/*.jar /demoapp.jar
+# Container image that runs your code
+FROM centos:latest
 
-CMD ["--server.port=8080"]
+# Copies your code file from your action repository to the filesystem path `/` of the container
+#COPY entrypoint.sh /entrypoint.sh
+COPY * ./
 
-EXPOSE 8080
+RUN chmod +x entrypoint.sh
 
-ENTRYPOINT ["java","-jar","/demoapp.jar"]
+# Code file to execute when the docker container starts up (`entrypoint.sh`)
+ENTRYPOINT ["/entrypoint.sh"]
