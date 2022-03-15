@@ -16,5 +16,7 @@ cci-iam-authenticator generate-kubeconfig --cci-endpoint=https://cci.cn-north-4.
 kubectl get ns
 kubectl get deployment -n cci-namespace-70395701
 kubectl get deploy -n cci-namespace-70395701
+kubectl get pods -n cci-namespace-70395701
+kubectl get rs -n cci-namespace-70395701
 
 # kubectl set image deployment/cci-deployment-20223141 container-0=swr.cn-north-4.myhuaweicloud.com/hcloudcli/demo:v1.1 
