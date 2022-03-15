@@ -13,10 +13,10 @@ curl -LO "https://cci-iam-authenticator.obs.cn-north-4.myhuaweicloud.com/latest/
 chmod +x ./cci-iam-authenticator
 mv ./cci-iam-authenticator /usr/local/bin
 cci-iam-authenticator generate-kubeconfig --cci-endpoint=https://cci.cn-north-4.myhuaweicloud.com --ak=${INPUT_ACCESS_KEY} --sk=${INPUT_SECRET_KEY}
-kubectl get ns
-kubectl get deployment -n cci-namespace-70395701
-kubectl get deploy -n cci-namespace-70395701
-kubectl get pods -n cci-namespace-70395701
-kubectl get rs -n cci-namespace-70395701
-kubectl describe deploy cci-deployment-20223141 -n cci-namespace-70395701
+# kubectl get ns
+# kubectl get deployment -n cci-namespace-70395701
+# kubectl get deploy -n cci-namespace-70395701
+# kubectl get pods -n cci-namespace-70395701
+# kubectl get rs -n cci-namespace-70395701
+# kubectl describe deploy cci-deployment-20223141 -n cci-namespace-70395701
 kubectl set image deploy cci-deployment-20223141 container-0=swr.cn-north-4.myhuaweicloud.com/hcloudcli/demo:v1.1 -n cci-namespace-70395701
