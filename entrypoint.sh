@@ -20,5 +20,5 @@ cci-iam-authenticator generate-kubeconfig --cci-endpoint=https://cci.cn-north-4.
 # kubectl get rs -n cci-namespace-70395701
 # kubectl describe deploy cci-deployment-20223141 -n cci-namespace-70395701
 #kubectl rollout undo deployment cci-deployment-20223141 -n cci-namespace-70395701
-kubectl patch  deployment cci-deployment-20223141 -p '{"spec":{"strategy":{"type":"RollingUpdate"}}}'
+kubectl patch  deployment cci-deployment-20223141 -p '{"spec":{"strategy":{"type":"RollingUpdate"}}}' -n cci-namespace-70395701
 #kubectl set image deploy cci-deployment-20223141 container-0=swr.cn-north-4.myhuaweicloud.com/hcloudcli/demo:v1.1 -n cci-namespace-70395701
