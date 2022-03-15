@@ -12,8 +12,8 @@ on:
       
 env:
   REGION_ID: cn-north-4                   # set this to your preferred huaweicloud region, e.g. cn-north-4
-  ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}             # set this to your huaweicloud access-key-id
-  ACCESS_KEY_SECRET: ${{ secrets.ACCESS_KEY_SECRET }}               # set this to your huaweicloud access-key-secret
+  ACCESS_KEY_ID: ${{ secrets.ACCESSKEY }}             # set this to your huaweicloud access-key-id
+  ACCESS_KEY_SECRET: ${{ secrets.SECRETACCESSKEY }}               # set this to your huaweicloud access-key-secret
   SWR_ORGANIZATION:  hcloudcli   # set this to your huaweicloud SWR organization
   IMAGE_NAME: ccidemo # set this to your image name
 
@@ -70,5 +70,5 @@ jobs:
           curl -LO "https://cci-iam-authenticator.obs.cn-north-4.myhuaweicloud.com/latest/linux-amd64/cci-iam-authenticator"
           chmod +x ./cci-iam-authenticator
           mv ./cci-iam-authenticator /usr/local/bin
-          cci-iam-authenticator generate-kubeconfig --cci-endpoint=https://cci.cn-north-4.myhuaweicloud.com --ak=${INPUT_ACCESS_KEY} --sk=${INPUT_SECRET_KEY}
+          cci-iam-authenticator generate-kubeconfig --cci-endpoint=https://cci.cn-north-4.myhuaweicloud.com --ak=${{ env.ACCESS_KEY_ID }} --sk=${{ secrets.SECRETACCESSKEY }}
           kubectl set image deploy cci-deployment-20223141 container-0=${{needs.build.outputs.image}} -n cci-namespace-70395701
