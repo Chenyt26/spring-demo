@@ -19,4 +19,4 @@ kubectl get deploy -n cci-namespace-70395701
 kubectl get pods -n cci-namespace-70395701
 kubectl get rs -n cci-namespace-70395701
 kubectl describe deploy cci-deployment-20223141 -n cci-namespace-70395701
-# kubectl set image deployment/cci-deployment-20223141 container-0=swr.cn-north-4.myhuaweicloud.com/hcloudcli/demo:v1.1 
+kubectl set image deploy cci-deployment-20223141 container-0=swr.cn-north-4.myhuaweicloud.com/hcloudcli/demo:v1.1 -n cci-namespace-70395701
