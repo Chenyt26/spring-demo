@@ -41,4 +41,4 @@ jobs:
           chmod +x ./cci-iam-authenticator
           mv ./cci-iam-authenticator /usr/local/bin
           cci-iam-authenticator generate-kubeconfig --cci-endpoint=https://cci.cn-north-4.myhuaweicloud.com --ak=${{ env.ACCESS_KEY_ID }} --sk=${{ secrets.SECRETACCESSKEY }}
-          kubectl apply -f deployment.yaml
+          kubectl apply -f deployment.yaml -n cci-namespace-70395701
