@@ -8,7 +8,7 @@ name: Deploy to HuaweiCloud CCI(Cloud Container Instance)
 on:
   push:
     branches:
-      - cci-nginx1
+      - cci-nginx
       
 env:
   REGION_ID: cn-north-4                   # set this to your preferred huaweicloud region, e.g. cn-north-4
